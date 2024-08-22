@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemp Cream Landing Page</title>
+    <style>
+        /* Reset and basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #2d6a4f; /* Dark green */
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        header.scrolled {
+            background-color: #1e4d3e; /* Darker green on scroll */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a0d6b4; /* Light green */
+        }
+
+
+        .hero {
+            background: lightseagreen;
+            height: 500px;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            padding-top: 60px; /* To ensure content is not hidden behind fixed header */
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 8px;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: #a0d6b4;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #2d6a4f;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #8fbc8f;
+        }
+        .hero-content button a{
+            text-decoration: none;
+            color:white;
+        }
+        .image img{
+            width: 400px;
+            height:400px ;
+            margin:50px;
+            float: left;
+        }
+
+        section {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2d6a4f;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .benefits, .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0.5s forwards;
+        }
+
+        .benefit-item, .testimonial {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit-item img, .testimonial img, .ingredient-item img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item:hover, .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #ingredients
+        {
+
+        }
+        .ingredients {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1s forwards;
+
+        }
+
+        .ingredient-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .ingredient-item img {
+            max-width: 60px;
+            height: auto;
+        }
+        .ingredient-item h2{
+            font-size:20px;
+
+        }
+
+        .ingredient-item:hover {
+            transform: scale(1.05);
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+       
+
+        .contact {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1.5s forwards;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .contact img {
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .contact form {
+            display: grid;
+            gap: 15px;
+
+        }
+
+        .contact label {
+            font-weight: bold;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-bottom: 5px;
+            opacity: 0;
+            gap: 5px;
+            transform: translateY(-10px);
+            animation: fadeInUp 0.5s ease-in-out forwards;
+        }
+
+        .contact input, .contact select, .contact textarea  {
+            padding: 10px;
+            font-size: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact input:focus, .contact select:focus, .contact textarea:focus {
+            border-color: #a0d6b4;
+            box-shadow: 0 0 5px rgba(160, 214, 180, 0.5);
+            outline: none;
+        }
+
+        .contact textarea {
+            resize: vertical;
+        }
+
+        .contact button {
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+            margin: auto;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #a0d6b4;
+            border: none;
+            font-size: 1em;
+            width: 50%;           
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2d6a4f;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .contact button:hover {
+            background-color: #8fbc8f;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer ul li {
+            margin: 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .contact form {
+                grid-template-columns: 1fr;
+            }
+
+            .ingredients {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Ingredients layout for desktop */
+        @media (min-width: 769px) {
+            .ingredients {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .ingredient-item:nth-child(n+5) {
+                grid-column: span 1;
+            }
+
+            .ingredient-item:nth-child(-n+4) {
+                grid-column: span 1;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+         #loading {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        #loading .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #a0d6b4;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq-container">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section 1: Product Display -->
+    <section id="home" class="hero">
+        <div class="image"> <img src="HEMP (1).png"></div>
+        <div class="hero-content">
+            <h1>All-Natural Hemp Cream for Pain Relief</h1>
+            <p>Relieve muscle and joint pain effectively with our herbal hemp cream. No side effects on the skin.</p>
+            <button ><a href="#contact">Order Now</a></button>
+        </div>
+    </section>
+
+    <!-- Section 2: Benefits -->
+    <section id="benefits">
+        <h2>Benefits of Our Hemp Cream</h2>
+        <div class="benefits">
+            <div class="benefit-item">
+                <img src="19.png" alt="Benefit 1">
+                <p>Reduces muscle soreness and tension.</p>
+            </div>
+            <div class="benefit-item">
+                <img src="20.png" alt="Benefit 2">
+                <p>Relieves joint pain and inflammation.</p>
+            </div>
+            <div class="benefit-item">
+                <img src="21.png" alt="Benefit 3">
+                <p>Improves skin hydration and elasticity.</p>
+            </div>
+            <div class="benefit-item">
+                <img src="Untitled design (5).png" alt="Benefit 4">
+                <p>100% natural with no harmful side effects.</p>
+            </div>
+            <div class="benefit-item">
+                <img src="22.png" alt="Benefit 5">
+                <p>Suitable for all skin types.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Ingredients -->
+    <section id="ingredients">
+        <h2>Our Natural Ingredients</h2>
+        <div class="ingredients">
+            <div class="ingredient-item">
+                <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2019/02/hemp-oil-in-glass-bottle-next-to-hemp-seeds-and-leaves-on-wooden-table.jpg" alt="Hemp Seed Oil">
+<h2>Hemp Seed Oil</h2>
+                <p>हेम्प बीउको तेलले छालालाई गहिरो हाइड्रेशन प्रदान गर्छ र सूजन कम गर्न मद्दत गर्छ। यसमा आवश्यक फैटी एसिडहरू हुन्छन् जसले छालालाई पोषण पुर्याउँछ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/13842/3f39961d-d850-4885-8ddc-d85186d1113a.jpg" alt="Arnica Extract">
+                <h2>Coconut Oil</h2>
+                <p>नारियल तेलले छालालाई अत्यधिक मोस्चराइज गर्छ र यसको प्राकृतिक एंटीसेप्टिक गुणले संक्रमणबाट बचाउँछ। यसले मांसपेशी र जोडको पीडा पनि कम गर्न मद्दत पुर्याउँछ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Menthol">
+                <h2>Aloe Vera</h2>
+                <p>एलो वेरा छालालाई शान्त पार्न र हाइड्रेट गर्न मद्दत गर्छ। यसले घाउको मर्मत प्रक्रियालाई गति दिन्छ र चिढिएको छालालाई आराम पुर्याउँछ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Eucalyptus Oil">
+                  <h2>Clove Oil</h2>
+                <p>लसुनको तेलमा प्राकृतिक एन्टी-ब्याक्टेरियल गुणहरू हुन्छन् जसले संक्रमण र पीडामा राहत पुर्याउँछ। यसले मांसपेशीको तनाव कम गर्न पनि मद्दत गर्न सक्छ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Ginger Root Extract">
+                <h2>Beeswax</h2>
+                <p>मासोले छालालाई संरक्षण प्रदान गर्छ र हाइड्रेशन रोक्न मद्दत गर्छ। यसले उत्पादनलाई स्थिर बनाउँछ र छालामा एक सुरक्षा परत सिर्जना गर्छ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Camphor">
+                 <h2>Menthol</h2>
+                <p>मेन्थोलले छालामा शीतलता र आरामको अनुभूति ल्याउँछ। यसले पीडा र तनाव कम गर्न मद्दत गर्छ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Lavender Oil">
+                 <h2>Cajaput Oil</h2>
+                <p>काजापुट तेलले सूजन र संक्रमणलाई कम गर्न मद्दत गर्छ। यसले छालालाई शान्त पार्न र पीडामा राहत पुर्याउँछ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Turmeric Extract">
+                  <h2>Gaultheria Oil</h2>
+                <p>गाउल्थेरिया तेलले जोर्नी र मांसपेशीको पीडा कम गर्न मद्दत गर्छ। यसमा प्राकृतिक दर्द निवारक गुणहरू हुन्छन्।a</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Jojoba Oil">
+                  <h2>Capsaicin oil</h2>
+                <p>क्याप्साइसिन तेलले पीडामा राहत पुर्याउँछ र मांसपेशीको सूजन कम गर्न मद्दत गर्छ। यसले दर्द निवारक प्रभाव पनि पार्न सक्छ।</p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://via.placeholder.com/60" alt="Aloe Vera">
+  <h2>Camphor</h2>
+                <p>क्याम्फरले पीडा कम गर्न र मांसपेशीलाई रिल्याक्स गर्न मद्दत गर्छ। यसले छालामा चिसो प्रभाव ल्याउँछ र सूजन घटाउँछ।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Testimonials -->
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 1">
+                <p>"This hemp cream is fantastic! It relieved my back pain in just a few days."</p>
+                <p>- John D.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/100" alt="Customer 2">
+                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
+                <p>- Sarah L.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: FAQ -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .accordion {
+            border-top: 1px solid #ddd;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion-header {
+            background-color: #eee;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #ddd;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+        .accordion-content p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="faq-container">
+    <div class="faq-container">
+        <h1>FAQ</h1>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">What is hemp cream?</button>
+                <div class="accordion-content">
+                    <p>Hemp cream is a topical product made from hemp extract. It is used for various purposes including moisturizing the skin and providing relief from minor aches and pains.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Is hemp cream legal?</button>
+                <div class="accordion-content">
+                    <p>Yes, hemp cream is legal in many places, provided it contains less than 0.3% THC. Always check local regulations to ensure compliance.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">How do I use hemp cream?</button>
+                <div class="accordion-content">
+                    <p>Apply a small amount of hemp cream to the affected area and gently massage it into the skin. Use as needed for relief or hydration.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Are there any side effects?</button>
+                <div class="accordion-content">
+                    <p>Hemp cream is generally considered safe, but some people may experience mild skin irritation. If irritation occurs, discontinue use and consult a healthcare professional.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Can I use hemp cream on my face?</button>
+                <div class="accordion-content">
+                    <p>Yes, you can use hemp cream on your face. Ensure it is suited for facial use and perform a patch test first to check for any adverse reactions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.accordion-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Toggle the current accordion item
+                    const content = header.nextElementSibling;
+                    const isVisible = content.style.display === 'block';
+
+                    // Hide all contents
+                    document.querySelectorAll('.accordion-content').forEach(c => {
+                        c.style.display = 'none';
+                    });
+
+                    // Show the clicked content if it was not visible
+                    if (!isVisible) {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Section 6: Contact Form -->
+    <section id="contact">
+        <h2>Get your Hemp Cream Now !!</h2>
+        <div class="contact">
+            <img src="Untitled design (1).png" alt="Hemp Cream">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="phone number">Number:</label>
+                <input type="phone number" id="number" name="number" placeholder="Your number" required>
+
+                <button type="submit">Order now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hemp Cream Inc. All rights reserved.</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+
+    <script>
+        
+        // Change header background on scroll
+         document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show loading spinner
+            document.getElementById('loading').style.display = 'flex';
+
+            // Simulate a form submission delay
+            setTimeout(function() {
+                // Example of sending form data to backend (use fetch or XMLHttpRequest)
+                const formData = new FormData(document.getElementById('contact-form'));
+                fetch('your-backend-endpoint', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    if (response.ok) {
+                        // Redirect to another page
+                        window.location.href = 'C:\Users\user\Desktop\hemp cream\thank you page.html'; // Change this URL to your actual page
+                    } else {
+                        // Handle errors
+                        console.error('Form submission failed');
+                        document.getElementById('loading').style.display = 'none'; // Hide spinner on failure
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('loading').style.display = 'none'; // Hide spinner on error
+                });
+            }, 2000); // Adjust delay time if needed
+        });
+
+        // Change header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+
+    </script>
+</body>
+</html>
