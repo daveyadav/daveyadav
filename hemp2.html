@@ -210,84 +210,71 @@
         }
        
 
-        .contact {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out 1.5s forwards;
-            max-width: 450px;
-            width: 100%;
-        }
+        /* New Contact Form Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-        .contact img {
-            max-width: 100%;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
+#order-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-        .contact form {
-            display: grid;
-            gap: 15px;
+#order-form h2 {
+    text-align: center;
+    color: #333;
+}
 
-        }
+.contact {
+    display: flex;
+    flex-direction: column;
+    
+}
 
-        .contact label {
-            font-weight: bold;
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            margin-bottom: 5px;
-            opacity: 0;
-            gap: 5px;
-            transform: translateY(-10px);
-            animation: fadeInUp 0.5s ease-in-out forwards;
-        }
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-        .contact input, .contact select, .contact textarea  {
-            padding: 10px;
-            font-size: 0.8em;
-            border: 1px solid #ccc;
-            border-radius: 15px;
-            transition: all 0.3s ease-in-out;
-        }
+.contact form {
+    width: 90%;
+}
 
-        .contact input:focus, .contact select:focus, .contact textarea:focus {
-            border-color: #a0d6b4;
-            box-shadow: 0 0 5px rgba(160, 214, 180, 0.5);
-            outline: none;
-        }
+.contact label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
 
-        .contact textarea {
-            resize: vertical;
-        }
+.contact input, select, button {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
 
-        .contact button {
-            border: 1px solid #ccc;
-            border-radius: 15px;
-            transition: all 0.3s ease-in-out;
-            margin: auto;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #a0d6b4;
-            border: none;
-            font-size: 1em;
-            width: 50%;           
-             display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #2d6a4f;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+.contact button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        .contact button:hover {
-            background-color: #8fbc8f;
-            transform: scale(1.02);
-        }
+.contact button:hover {
+    background-color: #218838;
+}
+
+
 
         footer {
             background-color: #2d6a4f;
@@ -435,7 +422,7 @@
         <div class="hero-content">
             <h1>All-Natural Hemp Cream for Pain Relief</h1>
             <p>Relieve muscle and joint pain effectively with our herbal hemp cream. No side effects on the skin.</p>
-            <button ><a href="#contact">Order Now</a></button>
+            <button ><a href="#order-form">Order Now</a></button>
         </div>
     </section>
 
@@ -471,52 +458,52 @@
         <h2>Our Natural Ingredients</h2>
         <div class="ingredients">
             <div class="ingredient-item">
-                <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2019/02/hemp-oil-in-glass-bottle-next-to-hemp-seeds-and-leaves-on-wooden-table.jpg" alt="Hemp Seed Oil">
+                <img src="29.png" alt="Hemp Seed Oil">
 <h2>Hemp Seed Oil</h2>
                 <p>हेम्प बीउको तेलले छालालाई गहिरो हाइड्रेशन प्रदान गर्छ र सूजन कम गर्न मद्दत गर्छ। यसमा आवश्यक फैटी एसिडहरू हुन्छन् जसले छालालाई पोषण पुर्याउँछ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/13842/3f39961d-d850-4885-8ddc-d85186d1113a.jpg" alt="Arnica Extract">
+                <img src="30.png" alt="Arnica Extract">
                 <h2>Coconut Oil</h2>
                 <p>नारियल तेलले छालालाई अत्यधिक मोस्चराइज गर्छ र यसको प्राकृतिक एंटीसेप्टिक गुणले संक्रमणबाट बचाउँछ। यसले मांसपेशी र जोडको पीडा पनि कम गर्न मद्दत पुर्याउँछ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Menthol">
+                <img src="31.png" alt="Menthol">
                 <h2>Aloe Vera</h2>
                 <p>एलो वेरा छालालाई शान्त पार्न र हाइड्रेट गर्न मद्दत गर्छ। यसले घाउको मर्मत प्रक्रियालाई गति दिन्छ र चिढिएको छालालाई आराम पुर्याउँछ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Eucalyptus Oil">
+                <img src="33.png" alt="Eucalyptus Oil">
                   <h2>Clove Oil</h2>
                 <p>लसुनको तेलमा प्राकृतिक एन्टी-ब्याक्टेरियल गुणहरू हुन्छन् जसले संक्रमण र पीडामा राहत पुर्याउँछ। यसले मांसपेशीको तनाव कम गर्न पनि मद्दत गर्न सक्छ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Ginger Root Extract">
+                <img src="23.png" alt="Ginger Root Extract">
                 <h2>Beeswax</h2>
                 <p>मासोले छालालाई संरक्षण प्रदान गर्छ र हाइड्रेशन रोक्न मद्दत गर्छ। यसले उत्पादनलाई स्थिर बनाउँछ र छालामा एक सुरक्षा परत सिर्जना गर्छ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Camphor">
+                <img src="24.png" alt="Camphor">
                  <h2>Menthol</h2>
                 <p>मेन्थोलले छालामा शीतलता र आरामको अनुभूति ल्याउँछ। यसले पीडा र तनाव कम गर्न मद्दत गर्छ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Lavender Oil">
+                <img src="25.png" alt="Lavender Oil">
                  <h2>Cajaput Oil</h2>
                 <p>काजापुट तेलले सूजन र संक्रमणलाई कम गर्न मद्दत गर्छ। यसले छालालाई शान्त पार्न र पीडामा राहत पुर्याउँछ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Turmeric Extract">
+                <img src="26.png" alt="Turmeric Extract">
                   <h2>Gaultheria Oil</h2>
                 <p>गाउल्थेरिया तेलले जोर्नी र मांसपेशीको पीडा कम गर्न मद्दत गर्छ। यसमा प्राकृतिक दर्द निवारक गुणहरू हुन्छन्।a</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Jojoba Oil">
+                <img src="27.png" alt="Jojoba Oil">
                   <h2>Capsaicin oil</h2>
                 <p>क्याप्साइसिन तेलले पीडामा राहत पुर्याउँछ र मांसपेशीको सूजन कम गर्न मद्दत गर्छ। यसले दर्द निवारक प्रभाव पनि पार्न सक्छ।</p>
             </div>
             <div class="ingredient-item">
-                <img src="https://via.placeholder.com/60" alt="Aloe Vera">
+                <img src="28.png" alt="Aloe Vera">
   <h2>Camphor</h2>
                 <p>क्याम्फरले पीडा कम गर्न र मांसपेशीलाई रिल्याक्स गर्न मद्दत गर्छ। यसले छालामा चिसो प्रभाव ल्याउँछ र सूजन घटाउँछ।</p>
             </div>
@@ -529,39 +516,20 @@
         <div class="testimonials">
             <div class="testimonial">
                 <img src="https://via.placeholder.com/100" alt="Customer 1">
-                <p>"This hemp cream is fantastic! It relieved my back pain in just a few days."</p>
-                <p>- John D.</p>
+                <p>"फुटबल खेल्दा हुने जोडको पीडाबाट राहत पाउन मैले हेम्प क्रिमको प्रयोग गरें। यसको सौम्यता र तिव्र असरले मलाई पुन: खेलमा फर्कन मद्दत गर्यो। अब म आफ्ना खेलकुद गतिविधिहरूलाई सहजै सञ्चालन गर्न सक्छु। यो क्रिम बुझेपछि, यो मेरो दैनिक रुटिनको अनिवार्य भाग बनेको छ।" </p>
+                <p>- Ahmed shah</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
+                <p>"लामो दूरीको दौड पछि जोडको पीडा अनुभव गर्न मलाई हेम्प क्रिमको उपयोग गर्नु पर्‍यो। यसको प्रयोगले मेरो मांसपेशी र जोर्नीलाई तिव्र राहत दिएको छ। म यो क्रिमलाई दौडको पूर्व र पछि नियमित रूपमा प्रयोग गर्न थालेको छु र यसको परिणाम अत्यन्तै सन्तोषजनक छन्।"</p>
+                <p>- Sharad karki</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
+                <p>"योगको दौरान हुने जोडको पीडाले मलाई धेरै समस्या दिइरहेको थियो। हेम्प क्रिम प्रयोग गरेपछि, मैले धेरै आराम र पीडा कम भएको अनुभव गरें। क्रिमको नरम बनावट र छिटो सोसिने क्षमता अत्यन्तै प्रभावकारी छ। यो अब मेरो योगा र वर्कआउटको साथी बनिसकेको छ।"</p>
+                <p>- Punam pariyar</p>
             </div>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
-            </div>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
-            </div>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
-            </div>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/100" alt="Customer 2">
-                <p>"I love how natural this cream is. It’s perfect for my sensitive skin."</p>
-                <p>- Sarah L.</p>
-            </div>
+            
         </div>
     </section>
 
@@ -655,6 +623,64 @@
         </div>
     </div>
     </section>
+    <section id="cautions">
+    <h2>Cautions & How to Use</h2>
+    <div class="cautions-container">
+        <div class="caution">
+            <h3>How to Use</h3>
+            <p>प्रभावित क्षेत्रमा हेम्प क्रीमको सानो मात्रा लागू गर्नुहोस्। पूर्ण रूपमा अवशोषित नभएसम्म यसलाई छालामा बिस्तारै मसाज गर्नुहोस्। उत्तम परिणामहरूको लागि, दैनिक 2-3 पटक प्रयोग गर्नुहोस्।</p>
+        </div>
+        <div class="caution">
+            <h3>Cautions</h3>
+            <p>बाहिरी प्रयोगको लागी मात्र। नाक, मुख आखाको सम्प्पर्कबाट बच्नुहोस। घाउ वा एलरजी भएको भएको छालामा प्रयोग नगर्नुहोस। प्रयोग गर्दा  केहि भएमा पहिला साबुनले धुवेर सफा गर्नुहोस र नजिकको स्वास्थ्यकर्मी संग सल्लाह लिनुहोस्। घामबाट टाढा र चिसो ठाउँमा राख्नुहोस र बालबालिकाहरु बाट टाढा राख्नुहोस। </p>
+        </div>
+    </div>
+</section>
+<style type="text/css">
+    /* Cautions & How to Use Section */
+#cautions {
+    background-color: #e0f7fa; /* Light cyan for background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cautions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.caution {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.caution h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2d6a4f;
+}
+
+.caution p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.caution:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+</style>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -680,22 +706,31 @@
         });
     </script>
 
-    <!-- Section 6: Contact Form -->
-    <section id="contact">
-        <h2>Get your Hemp Cream Now !!</h2>
+   <section id="order-form">
+        <h2>Order Your Hemp Cream</h2>
         <div class="contact">
-            <img src="Untitled design (1).png" alt="Hemp Cream">
-            <form>
+            <img src="Untitled design (1).png" alt="Hemp Cream" class="product-image">
+            <form id="order-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                <label for="phone number">Number:</label>
-                <input type="phone number" id="number" name="number" placeholder="Your number" required>
+                <label for="number">Number:</label>
+                <input type="tel" id="number" name="number" placeholder="Your Number" required>
 
-                <button type="submit">Order now</button>
+                <label for="package">Package:</label>
+                <select id="package" name="package" required>
+                    <option value="">Select Package</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+
+                <button type="submit" href="thankyou.html">Submit</button>
             </form>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer>
@@ -709,49 +744,26 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </footer>
-    <div id="loading">
-        <div class="spinner"></div>
-    </div>
+    
 
 
-    <script>
+    
         
-        // Change header background on scroll
-         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+      
+    // 
+    <script>
 
-            // Show loading spinner
-            document.getElementById('loading').style.display = 'flex';
+        
 
-            // Simulate a form submission delay
-            setTimeout(function() {
-                // Example of sending form data to backend (use fetch or XMLHttpRequest)
-                const formData = new FormData(document.getElementById('contact-form'));
-                fetch('your-backend-endpoint', {
-                    method: 'POST',
-                    body: formData
-                }).then(response => {
-                    if (response.ok) {
-                        // Redirect to another page
-                        window.location.href = 'C:\Users\user\Desktop\hemp cream\thank you page.html'; // Change this URL to your actual page
-                    } else {
-                        // Handle errors
-                        console.error('Form submission failed');
-                        document.getElementById('loading').style.display = 'none'; // Hide spinner on failure
-                    }
-                }).catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('loading').style.display = 'none'; // Hide spinner on error
-                });
-            }, 2000); // Adjust delay time if needed
-        });
+</script>
 
-        // Change header background on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 0);
-        });
 
-    </script>
+
+
+
+   
+
+
+
 </body>
 </html>
